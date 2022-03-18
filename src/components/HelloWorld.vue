@@ -8,6 +8,7 @@
           {{ step.description }}
         </p>
       </a>
+      <img v-if="step.image" alt="" :src="'/images/' + step.image" />
       <a v-if="step.note" href="step.note-link" target="_blank">
         <p class="note">{{ step.note }}</p>
       </a>
@@ -22,6 +23,7 @@ export default {
     header: String,
     steps: Array,
   },
+  methods: {},
 };
 </script>
 
