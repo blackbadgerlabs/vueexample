@@ -85,8 +85,13 @@ export default {
       } catch (e) {
         // If there is an error then we delete the saved data
         localStorage.removeItem("steps");
+        localStorage.setItem("steps", this.steps);
         console.log("local data corrupted refreshing")
       }
+    }
+    else
+    {
+      localStorage.setItem("steps", this.steps);
     }
   },
   watch: {
@@ -103,8 +108,6 @@ export default {
       },
       // We want to watch deep into the array
       deep: true,
-      // We want to run the watcher as soon as the app loads
-      immediate: true,
     },
   },
   components: {
