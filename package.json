@@ -1,5 +1,5 @@
 {
-  "name": "example-app",
+  "name": "vue-codesandbox-examplenetlify",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -42,5 +42,5 @@
     "not dead"
   ],
   "keywords": [],
-  "description": ""
+  "description": "A Vue Codesandbox example that deploys to Netlify and contains the steps used to set it up."
 }
