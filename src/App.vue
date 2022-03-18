@@ -54,8 +54,9 @@ export default {
         },
         {
           name: "Give your site a new domain name",
-          description: "You can create a new domain name for your site in codesandbox",
-          image: "change-site-domain-name.png"
+          description:
+            "You can create a new domain name for your site in netlify",
+          image: "change-site-domain-name.png",
         },
       ],
     };
