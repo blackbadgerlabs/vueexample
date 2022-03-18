@@ -1,6 +1,9 @@
-# t
+# This is am example app that shows the steps used to set up it's own development environment
 
 ## Project setup
+
+Visit the Main app page here to see the app which also shows how it was set up: https://vue-codesandbox-example.netlify.app
+
 ```
 yarn install
 ```
