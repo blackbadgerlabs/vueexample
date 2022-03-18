@@ -82,7 +82,8 @@ export default {
     if (localStorage.getItem("steps")) {
       try {
         this.steps = JSON.parse(localStorage.getItem("steps"));
-      } catch (e) { // If there is an error then we delete the saved data
+      } catch (e) {
+        // If there is an error then we delete the saved data
         localStorage.removeItem("steps");
       }
     }
@@ -94,7 +95,7 @@ export default {
      * This way our changes are saved
      */
     steps: {
-      handler: function (val, oldVal) {
+      handler: function () {
         const parsed = JSON.stringify(this.steps);
         localStorage.setItem("steps", parsed);
       },
