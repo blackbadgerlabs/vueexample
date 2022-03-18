@@ -52,6 +52,11 @@ export default {
             "You can then later log into Netlify and link the repo so you can deploy your updates",
           image: "link-repo-to-netlify.png",
         },
+        {
+          name: "Give your site a new domain name",
+          description: "You can create a new domain name for your site in codesandbox",
+          image: "change-site-domain-name.png"
+        },
       ],
     };
   },
