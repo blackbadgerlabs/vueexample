@@ -85,6 +85,7 @@ export default {
       } catch (e) {
         // If there is an error then we delete the saved data
         localStorage.removeItem("steps");
+        console.log("local data corrupted refreshing")
       }
     }
   },
@@ -98,6 +99,7 @@ export default {
       handler: function () {
         const parsed = JSON.stringify(this.steps);
         localStorage.setItem("steps", parsed);
+        console.log(localStorage.getItem("steps"));
       },
       // We want to watch deep into the array
       deep: true,
