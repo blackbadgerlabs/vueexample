@@ -1,11 +1,16 @@
 <template>
   <HelloWorld :header="header" :steps="steps" />
+  <p>You can find the codesandbox for this Application with the source code here: <a href="https://codesandbox.io/s/vue-codesandbox-example-netlify-bz2e7j"> https://codesandbox.io/s/vue-codesandbox-example-netlify-bz2e7j </a></p>
 </template>
 
 <script>
 import HelloWorldVue from "./components/HelloWorld.vue";
 export default {
   name: "App",
+  /**
+   * Here is our data object that is storing the data used by the App
+   * In this case the data is the steps used to make the app itself
+   */
   data() {
     return {
       header: "How we made this app",
@@ -104,7 +109,6 @@ export default {
       handler: function () {
         const parsed = JSON.stringify(this.steps);
         localStorage.setItem("steps", parsed);
-        console.log(localStorage.getItem("steps"));
       },
       // We want to watch deep into the array
       deep: true,

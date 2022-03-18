@@ -2,14 +2,17 @@
   <div class="hello">
     <h1>{{ header }}</h1>
     <div v-for="(step, index) in steps" :key="step.name">
-      <h2><input type="checkbox" id="checkbox" v-model="step.done"> Step {{ index + 1 }} {{ step.name }}</h2>
+      <h2>
+        <input type="checkbox" id="checkbox" v-model="step.done" /> Step
+        {{ index + 1 }} {{ step.name }}
+      </h2>
       <a :href="step.link" target="_blank">
         <p>
           {{ step.description }}
         </p>
       </a>
       <img v-if="step.image" alt="" :src="'/images/' + step.image" />
-      <a v-if="step.note" href="step.note_link" target="_blank">
+      <a v-if="step.note" :href="step.note_link" target="_blank">
         <p class="note">{{ step.note }}</p>
       </a>
       <img v-if="step.note_image" alt="" :src="'/images/' + step.note_image" />
