@@ -1,5 +1,6 @@
 <template>
   <HelloWorld :header="header" :steps="steps" />
+  <br> <br> <br> <br>
   <p>You can find the codesandbox for this Application with the source code here: <a href="https://codesandbox.io/s/vue-codesandbox-example-netlify-bz2e7j"> https://codesandbox.io/s/vue-codesandbox-example-netlify-bz2e7j </a></p>
 </template>
 
@@ -13,61 +14,38 @@ export default {
    */
   data() {
     return {
-      header: "How we made this app",
+      header: "Quizz 1",
       // These are the steps to folow to set up the environment
       steps: [
         {
-          name: "Get a Github Account",
-          description: "Register at Github",
-          link: "https://github.com/",
-          done: false,
+          question: "Question ",
+          description: "Intitulé de la question 1",
+          answer1: "réponse 1",
+          answer2: "réponse 2",
+          answer3: "réponse 3",
+          answer4: "réponse 4",
+          multiple_answer: false,
         },
         {
-          name: "Create Your Sandbox",
-          description: "Register at stackblitz using your github account",
-          link: "https://stackblitz.com/",
-          done: false,
+          question: "Question ",
+          description: "Intitulé de la question 2",
+          answer1: "réponse 1",
+          answer2: "réponse 2",
+          answer3: "réponse 3",
+          answer4: "réponse 4",
+          multiple_answer: true,
         },
         {
-          name: "Select your template",
-          description: "select create from a template, and then select Vue 3",
-          done: false,
-        },
-        {
-          name: "Link Your Sandbox to Github",
-          description:
-            "Select connect repository and create a new Github repository in the menu that comes up",
-          image: "stackblitz-create-new-repo.png",
-          done: false,
-        },
-        {
-          name: "Check your new Code Repo",
-          description: "You will now have a new code repo like this one!",
-          link: "https://github.com/blackbadgerlabs/vueexample",
-          done: false,
-        },
-        {
-          name: "Link the repo from Netlify",
-          description:
-            "Log into Netlify and select add new site and then Import an existing project from a Git repository and choose the Git Repository you have created.",
-          image: "import-existing-site.png",
-          done: false,
-        },
-        {
-          name: "Make sure the repo is linked so that the site updates",
-          description:
-            "You need to make sure that the repo is linked so that it redeplys every time you make a new commit to the main branch",
-          image: "link-repo-to-netlify.png",
-          done: false,
-        },
-        {
-          name: "Give your site a new domain name",
-          description:
-            "You can create a new domain name for your site in netlify",
-          image: "change-site-domain-name.png",
-          done: false,
+          question: "Question ",
+          description: "Intitulé de la question 1",
+          answer1: "réponse 1",
+          answer2: "réponse 2",
+          answer3: "réponse 3",
+          answer4: "réponse 4",
+          multiple_answer: false,
         },
       ],
+      image: "",
     };
   },
   mounted() {

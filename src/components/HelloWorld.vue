@@ -2,20 +2,23 @@
   <div class="hello">
     <h1>{{ header }}</h1>
     <div v-for="(step, index) in steps" :key="step.name">
-      <h2>
-        <input type="checkbox" id="checkbox" v-model="step.done" /> Step
-        {{ index + 1 }} {{ step.name }}
-      </h2>
-      <a :href="step.link" target="_blank">
-        <p>
-          {{ step.description }}
-        </p>
-      </a>
-      <img v-if="step.image" alt="" :src="'/images/' + step.image" />
-      <a v-if="step.note" :href="step.note_link" target="_blank">
-        <p class="note">{{ step.note }}</p>
-      </a>
-      <img v-if="step.note_image" alt="" :src="'/images/' + step.note_image" />
+      <h2 v-if="step.multiple_answer == true">#{{ index + 1 }} {{ step.question }}  (plusieurs réponses)</h2>
+      <h2 v-else>#{{ index + 1 }} {{ step.question }}  (une réponse)</h2>
+
+        <p>{{ step.description }}</p>
+        
+       <h3 v-if="step.multiple_answer == true" class="answer"> <input type="checkbox" id="check_box1" name="case" value="reponse1">{{step.answer1}} </h3> 
+       <h3 v-if="step.multiple_answer == true" class="answer"> <input type="checkbox" id="check_box2" name="case" value="reponse2">{{step.answer2}} </h3> 
+       <h3 v-if="step.multiple_answer == true" class="answer"> <input type="checkbox" id="check_box3" name="case" value="reponse3">{{step.answer3}} </h3> 
+       <h3 v-if="step.multiple_answer == true" class="answer"> <input type="checkbox" id="check_box4" name="case" value="reponse4">{{step.answer4}} </h3> 
+
+
+       <h3 v-if="step.multiple_answer == false" class="answer"> <input type="radio" id="radio1" name="reponse" >{{step.answer1}} </h3> 
+       <h3 v-if="step.multiple_answer == false" class="answer"> <input type="radio" id="radio2" name="reponse" >{{step.answer2}} </h3> 
+       <h3 v-if="step.multiple_answer == false" class="answer"> <input type="radio" id="radio3" name="reponse" >{{step.answer3}} </h3> 
+       <h3 v-if="step.multiple_answer == false" class="answer"> <input type="radio" id="radio4" name="reponse" >{{step.answer4}} </h3> 
+       
+      <br><br><br><br><br>
     </div>
   </div>
 </template>
@@ -33,9 +36,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -51,4 +52,10 @@ a {
 .note {
   color: #42b983;
 }
+
+.answer{
+    border: 2px solid #3d3d3d;
+    
+}
+
 </style>
