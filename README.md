@@ -2,7 +2,7 @@
 
 ## Project setup
 
-Visit the Main app page here to see the app which also shows how it was set up: https://vue-codesandbox-example.netlify.app
+Visit the Main app page here to see the app which also shows how it was set up: https://vue-stackblitz-example.netlify.app/
 
 Find the main Sandbox here: https://stackblitz.com/edit/vue-3-example
 
