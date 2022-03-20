@@ -12,13 +12,11 @@
       </h2>
 
       <p>{{ step.description }}</p>
-      
-      <h3 v-if="step.multiple_answer == true" v-for="(answer, index) in step.answers" class="answer"> <input type="checkbox" id="check_box1" name="case" value="reponse1">{{answer.text}}tetst </h3> 
-      
-      <h3 v-if="step.multiple_answer == false" v-for="(answer, index) in step.answers" class="answer"> <input type="radio" id="radio1" name="reponse" >{{answer.text}} haha </h3>
 
+     <h3 v-if="step.multiple_answer == true" v-for="(answer, answer_index) in step.answers" class="answer"> <input type="checkbox" name="case" value="reponse1" v-model="answer.selected">{{answer.text}} </h3> 
+      
+     <h3 v-if="step.multiple_answer == false" v-for="(answer, answer_index) in step.answers" class="answer"> <input type="radio" name="reponse" :value="answer_index" v-model="step.radio_select">{{answer.text}}  </h3>
 
-      <p> {{step.checked_answer}} </p>
 
 
     </div>
