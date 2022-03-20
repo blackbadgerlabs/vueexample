@@ -6,7 +6,6 @@
       <h2 v-if="step.multiple_answer == true">
         #{{ index + 1 }} {{ step.question }}  (plusieurs réponses)
       </h2>
-
       <h2 v-else>
         #{{ index + 1 }} {{ step.question }}  (une réponse)
       </h2>
