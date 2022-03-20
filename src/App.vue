@@ -100,7 +100,7 @@ export default {
   },
 
   methods: {
-    markQuizz: function (event) {
+    markQuizz: function () {
       let score = 0;
       for (let i = 0; i < this.steps.length; i++) {
         console.log(this.steps[i]);
