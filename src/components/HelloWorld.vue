@@ -1,21 +1,26 @@
 <template>
   <div class="hello">
     <h1>{{ header }}</h1>
-    <div v-for="(step, index) in steps" :key="step.name">
-      <h2>
-        <input type="checkbox" id="checkbox" v-model="step.done" /> Step
-        {{ index + 1 }} {{ step.name }}
+    <div class=  "padding-top" v-for="(step, index) in steps" :key="step.name">
+
+      <h2 v-if="step.multiple_answer == true">
+        #{{ index + 1 }} {{ step.question }}  (plusieurs réponses)
       </h2>
-      <a :href="step.link" target="_blank">
-        <p>
-          {{ step.description }}
-        </p>
-      </a>
-      <img v-if="step.image" alt="" :src="'/images/' + step.image" />
-      <a v-if="step.note" :href="step.note_link" target="_blank">
-        <p class="note">{{ step.note }}</p>
-      </a>
-      <img v-if="step.note_image" alt="" :src="'/images/' + step.note_image" />
+      <h2 v-else>
+        #{{ index + 1 }} {{ step.question }}  (une réponse)
+      </h2>
+
+      <p>{{ step.description }}</p>
+
+      <div v-if="step.multiple_answer == true">
+        <h3 v-for="(answer, answer_index) in step.answers" :key="'answer'+answer_index+index" class="answer"> <input type="checkbox" name="case" value="reponse1" v-model="answer.selected">{{answer.text}} </h3> 
+      </div>
+
+      <div v-if="step.multiple_answer == false">
+      <h3 v-for="(answer, answer_index) in step.answers" :key="'answer'+answer_index+index" class="answer"> <input type="radio" name="reponse" :value="answer_index" v-model="step.radio_select">{{answer.text}}  </h3>
+      </div>
+
+
     </div>
   </div>
 </template>
@@ -26,6 +31,7 @@ export default {
   props: {
     header: String,
     steps: Array,
+    image: String,
   },
   methods: {},
 };
@@ -33,22 +39,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+
+.answer{
+    border: 2px solid #3d3d3d;
+    color: #3d3d3d;
+    font-family:'Segoe UI';
+    text-align: left;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #000000;
+.padding-top{
+   padding-top: 50px;
 }
 
-.note {
-  color: #42b983;
-}
 </style>
