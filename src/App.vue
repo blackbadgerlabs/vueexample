@@ -29,34 +29,34 @@ export default {
         {
           question: 'Question ',
           multiple_answer: true,
-          description: 'Intitulé de la question 1',
+          description: 'Qui sont les membres de kapish technic?',
           answers: [
-            { text: 'réponse 1.1t', right_answer: true },
-            { text: 'réponse 1.2' },
-            { text: 'réponse 1.3' },
-            { text: 'réponse 1.4' },
+            { text: 'Antoine', right_answer: true},
+            { text: 'Alain' },
+            { text: 'Abdeljelil' },
+            { text: 'Hubert', right_answer: true},
           ],
         },
         {
           question: 'Question ',
           multiple_answer: true,
-          description: 'Intitulé de la question 2',
+          description: 'Qui sont les membres de kapish comms ?',
           answers: [
-            { text: 'réponse 2.1t', right_answer: true },
-            { text: 'réponse 2.2t', right_answer: true },
-            { text: 'réponse 2.3' },
-            { text: 'réponse 2.4' },
+            { text: 'Arthur', right_answer: true},
+            { text: 'Maria', right_answer: true},
+            { text: 'Belen' },
+            { text: 'Loann', right_answer: true},
           ],
         },
         {
           question: 'Question ',
           multiple_answer: false,
-          description: 'Intitulé de la question 3',
+          description: 'Choisir 12 :',
           answers: [
-            { text: 'réponse 3.1' },
-            { text: 'réponse 3.2' },
-            { text: 'réponse 3.3' },
-            { text: 'réponse 3.4t', right_answer: true },
+            { text: '10' },
+            { text: '11' },
+            { text: '13' },
+            { text: '12', right_answer: true},
           ],
         },
       ],
@@ -69,7 +69,7 @@ export default {
      */
     if (localStorage.getItem('steps')) {
       try {
-        //this.steps = JSON.parse(localStorage.getItem("steps"));
+        this.steps = JSON.parse(localStorage.getItem("steps"));
       } catch (e) {
         // If there is an error then we delete the saved data
         localStorage.removeItem('steps');
