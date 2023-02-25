@@ -13,7 +13,7 @@ export default {
    */
   data() {
     return {
-      header: "How we made this app",
+      header: "Steps we used to make this app",
       // These are the steps to folow to set up the environment
       steps: [
         {
